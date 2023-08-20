@@ -1,11 +1,17 @@
 // Test ID: IIDSAT
 
+<<<<<<< HEAD
+=======
+import { useLoaderData } from "react-router-dom";
+import { getOrder } from "../../services/apiRestaurant";
+>>>>>>> 0c6fdad (React Router, and Tailwindcss)
 import {
   calcMinutesLeft,
   formatCurrency,
   formatDate,
 } from "../../utils/helpers";
 
+<<<<<<< HEAD
 const order = {
   id: "ABCDEF",
   customer: "Jonas",
@@ -42,6 +48,11 @@ const order = {
 };
 
 function Order() {
+=======
+
+function Order() {
+  const order = useLoaderData()
+>>>>>>> 0c6fdad (React Router, and Tailwindcss)
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
@@ -83,4 +94,12 @@ function Order() {
   );
 }
 
+<<<<<<< HEAD
+=======
+export async function loader({params}) {
+  const order = await getOrder(params.orderId)
+  return order;
+}
+
+>>>>>>> 0c6fdad (React Router, and Tailwindcss)
 export default Order;
